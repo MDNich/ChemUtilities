@@ -7,7 +7,6 @@
 
 
 import Cocoa
-import LASwift
 
 
 
@@ -33,6 +32,7 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var eqType: NSSegmentedControl!
     
+    @IBOutlet weak var equationDisplayField: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,9 @@ class ViewController: NSViewController {
 
     @IBAction func Balance(_ sender: Any) {
         
-        let input = "C6H12O6 + O2 -> CO2 + H2O"//"NO2(-) + Cr2O7(2-) -> Cr(3+) + NO3(-)" // TODO Replace with input from GUI
+        //let input = "C6H12O6 + O2 -> CO2 + H2O"//"NO2(-) + Cr2O7(2-) -> Cr(3+) + NO3(-)" // TODO Replace with input from GUI
+        
+        let input = eqField.stringValue
         
         print("Parsing reaction \(input), parsed reactants and products:")
         // requirements: separate species with ' + ' and products and reactants with ' -> '.
@@ -197,12 +199,15 @@ class ViewController: NSViewController {
             productsUnderstood.append(Compound(elements: elements, elementCoeffs: coeffs, totalCharge: charge))
         }
         
-        print(reactantsUnderstood)
-        print(productsUnderstood)
+        print("Parsed reactants: \(reactantsUnderstood)")
+        print("Parsed products: \(productsUnderstood)")
         
         // MARK: Balance Equation
         
-        let isRedox = (eqType.selectedSegment == 1)
+        
+        let type = eqType.selectedSegment == 0 ? reactionType.normal : (eqType.selectedSegment == 1 ? reactionType.redox : reactionType.acidbase)
+        
+        let isRedox = type == reactionType.normal
         
         // if not redox, create linear algebra system
         
@@ -224,7 +229,7 @@ class ViewController: NSViewController {
                 allElements.append(el)
             }
         }
-        print(allElements)
+        //print(allElements)
         
         var matrix: [[Double]] = []
         var col = 0
@@ -245,7 +250,7 @@ class ViewController: NSViewController {
         
         for j in 0...matrix[0].count-1 {
             transposedMatrix.append([Double](repeating: 0, count: matrix.count))
-            print(j)
+            //print(j)
         }
         
         for i in 0...matrix.count-1 {
@@ -254,8 +259,8 @@ class ViewController: NSViewController {
             }
             
         }
-        print("Row reducing the following matrix: ")
-        print(transposedMatrix)
+        //print("Row reducing the following matrix: ")
+        //print(transposedMatrix)
         
         // FROM ROSETTACODE - SWIFT
         var m = transposedMatrix
@@ -298,8 +303,27 @@ class ViewController: NSViewController {
            lead += 1
         }
         
-        // row reduction complete, the last entry 
-        print(m)
+        // row reduction complete, the last entry in each row will determine the coefficients.
+        var lastCol: [Double] = []
+        for i in 0...m.count-1 {
+            lastCol.append(abs(m[i].last!))
+        }
+        let factor = 1/lastCol.min()!
+        //print(factor)
+        var balancedCoeffs: [Int] = []
+        for i in 0...m.count-1 {
+            balancedCoeffs.append(Int(abs(factor*lastCol[i])))
+        }
+        balancedCoeffs.append(Int(factor))
+        //print(balancedCoeffs)
+        
+        let balancedReaction = Reaction(compounds: reactantsUnderstood+productsUnderstood, compoundCoeffs: balancedCoeffs, nReact: reactantsUnderstood.count, balanced: true, type: type)
+        
+        print("Finished balancing reaction, result is")
+        print(balancedReaction)
+        equationDisplayField.stringValue = balancedReaction.description
+        
+        
         
         
         
@@ -352,6 +376,12 @@ enum elementType {
     case actinide
 }
 
+enum reactionType {
+    case normal
+    case redox
+    case acidbase
+}
+
 class ElectronShell {
     var shells: [e]
     var numEperShell: [Int]
@@ -370,6 +400,61 @@ protocol Element {
     var valence: Int { get }
     var electronShellComposition: ElectronShell { get }
     var type: elementType { get }
+}
+
+// MARK: Reaction
+class Reaction: NSObject {
+    var compounds: [Compound]
+    var compoundCoeffs: [Int]
+    var nReact: Int
+    var enthalpy: Double?
+    var entropy: Double?
+    var gibbsAt298K: Double?
+    var balanced: Bool = false
+    var type: reactionType = reactionType.normal
+    
+    init(compounds: [Compound], compoundCoeffs: [Int], nReact: Int, balanced: Bool, type: reactionType) {
+        self.compounds = compounds
+        self.compoundCoeffs = compoundCoeffs
+        self.nReact = nReact
+        self.enthalpy = nil
+        self.entropy = nil
+        self.gibbsAt298K = nil
+        self.balanced = balanced
+        self.type = type
+        //print("Created reaction object with \(nReact) reactants yielding \(compounds.count-nReact) products")
+    }
+    
+    public override var description: String {
+        //print(compounds)
+        //print(compoundCoeffs)
+        var ret = ""
+        for i in 0...nReact-1 {
+            //print(i)
+            var retIni = ""
+            if(compoundCoeffs[i] == 1) {
+                retIni = "\(compounds[i].description.components(separatedBy: " ")[0])"
+            }
+            else {
+                retIni = "\(compoundCoeffs[i])\(compounds[i].description.components(separatedBy: " ")[0])"
+            }
+            if(ret == "") {
+                ret = retIni
+                //print(ret)
+                continue
+            }
+            ret = "\(ret) + \(retIni)"
+            //print(ret)
+        }
+        ret = "\(ret) -> "
+        //print(ret)
+        let ret0 = ret
+        for i in nReact...compounds.count-1 {
+            ret = ret != ret0 ? "\(ret) + \(compoundCoeffs[i])\(compounds[i].description.components(separatedBy: " ")[0])" : "\(ret)\(compoundCoeffs[i])\(compounds[i].description.components(separatedBy: " ")[0])"
+        }
+        return ret
+    }
+    
 }
 
 class Compound: NSObject {
@@ -402,6 +487,7 @@ class Compound: NSObject {
         }
         return [flag,ind]
     }
+    
     
     public override var description: String {
         /*print("---")

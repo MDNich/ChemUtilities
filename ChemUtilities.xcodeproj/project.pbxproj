@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7258C8E92C49AF4A005A6A92 /* LASwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7258C8E82C49AF4A005A6A92 /* LASwift */; };
 		7286CFD42C46D8CA0059EC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7286CFD32C46D8CA0059EC45 /* AppDelegate.swift */; };
 		7286CFD62C46D8CA0059EC45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7286CFD52C46D8CA0059EC45 /* ViewController.swift */; };
 		7286CFD82C46D8CB0059EC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7286CFD72C46D8CB0059EC45 /* Assets.xcassets */; };
@@ -28,7 +27,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7258C8E92C49AF4A005A6A92 /* LASwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +78,6 @@
 			);
 			name = ChemUtilities;
 			packageProductDependencies = (
-				7258C8E82C49AF4A005A6A92 /* LASwift */,
 			);
 			productName = ChemUtilities;
 			productReference = 7286CFD02C46D8CA0059EC45 /* ChemUtilities.app */;
@@ -111,7 +108,6 @@
 			);
 			mainGroup = 7286CFC72C46D8CA0059EC45;
 			packageReferences = (
-				7258C8E72C49AF4A005A6A92 /* XCRemoteSwiftPackageReference "LASwift" */,
 			);
 			productRefGroup = 7286CFD12C46D8CA0059EC45 /* Products */;
 			projectDirPath = "";
@@ -352,25 +348,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		7258C8E72C49AF4A005A6A92 /* XCRemoteSwiftPackageReference "LASwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AlexanderTar/LASwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		7258C8E82C49AF4A005A6A92 /* LASwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7258C8E72C49AF4A005A6A92 /* XCRemoteSwiftPackageReference "LASwift" */;
-			productName = LASwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7286CFC82C46D8CA0059EC45 /* Project object */;
 }
