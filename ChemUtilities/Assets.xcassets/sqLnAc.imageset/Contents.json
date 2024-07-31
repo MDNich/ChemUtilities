@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "sfSymbol_sq_LnAc.svg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "sfSymbol_sq_LnAc 1.svg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "sfSymbol_sq_LnAc 2.svg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
