@@ -262,7 +262,6 @@ class ViewController: NSViewController {
         //print("Row reducing the following matrix: ")
         //print(transposedMatrix)
         
-        // FROM ROSETTACODE - SWIFT
         var m = transposedMatrix
         let rows = m.count
         let cols = m[0].count
