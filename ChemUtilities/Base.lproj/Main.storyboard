@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23094"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24128"/>
         <capability name="NSView safe area layout guides" minToolsVersion="12.0"/>
+        <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -739,11 +740,11 @@
                                 <rect key="frame" x="19" y="56" width="266" height="535"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="2r6-Ux-iyg">
-                                    <rect key="frame" x="4" y="5" width="258" height="527"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="266" height="535"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pfr-Yh-yph">
-                                            <rect key="frame" x="4" y="491" width="50" height="16"/>
+                                            <rect key="frame" x="4" y="499" width="50" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Name:" id="qjW-iN-3Ay">
                                                 <font key="font" size="13" name="LucidaGrande-Bold"/>
@@ -752,7 +753,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UbM-Vh-wGl">
-                                            <rect key="frame" x="3" y="467" width="94" height="16"/>
+                                            <rect key="frame" x="3" y="475" width="94" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Atomic # (Z):" id="EqE-b8-WhW">
                                                 <font key="font" size="13" name="LucidaGrande-Bold"/>
@@ -761,7 +762,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="01d-hI-67c">
-                                            <rect key="frame" x="3" y="443" width="97" height="16"/>
+                                            <rect key="frame" x="3" y="451" width="97" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Atomic Mass:" id="Mkt-0b-vYi">
                                                 <font key="font" size="13" name="LucidaGrande-Bold"/>
@@ -770,7 +771,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwm-DX-cxR">
-                                            <rect key="frame" x="4" y="419" width="42" height="16"/>
+                                            <rect key="frame" x="4" y="427" width="42" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Kind:" id="Y1w-hI-ARQ">
                                                 <font key="font" size="13" name="LucidaGrande-Bold"/>
@@ -779,7 +780,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Rs-08-QV9">
-                                            <rect key="frame" x="5" y="395" width="45" height="16"/>
+                                            <rect key="frame" x="5" y="403" width="45" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="State:" id="eiE-Gb-Piq">
                                                 <font key="font" size="13" name="LucidaGrande-Bold"/>
@@ -788,7 +789,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ieP-yh-aqB">
-                                            <rect key="frame" x="2" y="371" width="133" height="16"/>
+                                            <rect key="frame" x="2" y="379" width="133" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Common Isotopes:" id="Q6s-i1-avG">
                                                 <font key="font" size="13" name="LucidaGrande-Bold"/>
@@ -797,7 +798,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rAi-5B-GaX">
-                                            <rect key="frame" x="3" y="347" width="79" height="16"/>
+                                            <rect key="frame" x="3" y="355" width="79" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Melting Pt:" id="hWm-Ht-bdS">
                                                 <font key="font" size="13" name="LucidaGrande-Bold"/>
@@ -806,7 +807,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vhj-Cr-Z06">
-                                            <rect key="frame" x="3" y="323" width="76" height="16"/>
+                                            <rect key="frame" x="3" y="331" width="76" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Boiling Pt:" id="SL7-z6-eM1">
                                                 <font key="font" size="13" name="LucidaGrande-Bold"/>
@@ -815,7 +816,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vuz-6x-Smc">
-                                            <rect key="frame" x="4" y="299" width="124" height="16"/>
+                                            <rect key="frame" x="4" y="307" width="124" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Electronegativity:" id="GMu-p4-Nx7">
                                                 <font key="font" size="13" name="LucidaGrande-Bold"/>
@@ -824,7 +825,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yc5-QV-WzQ">
-                                            <rect key="frame" x="3" y="275" width="58" height="16"/>
+                                            <rect key="frame" x="3" y="283" width="58" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="First IE:" id="Jhh-Wx-9qZ">
                                                 <font key="font" size="13" name="LucidaGrande-Bold"/>
@@ -833,7 +834,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ft-yo-kgV">
-                                            <rect key="frame" x="3" y="251" width="114" height="16"/>
+                                            <rect key="frame" x="3" y="259" width="114" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Electron Config:" id="Odp-PI-eLj">
                                                 <font key="font" size="13" name="LucidaGrande-Bold"/>
@@ -842,7 +843,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XVr-Fe-rmf">
-                                            <rect key="frame" x="53" y="491" width="70" height="16"/>
+                                            <rect key="frame" x="53" y="499" width="70" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Hydrogen" id="Ucw-dX-jHT">
                                                 <font key="font" size="13" name="LucidaGrande"/>
@@ -851,7 +852,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VxF-B9-7Na">
-                                            <rect key="frame" x="91" y="20" width="76" height="18"/>
+                                            <rect key="frame" x="91" y="28" width="76" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="inline" title="Wikipedia ▷" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="f68-7O-Uvw">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1928,7 +1929,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Hg" id="QSW-lD-epY">
                                     <font key="font" size="21" name="LucidaGrande-Bold"/>
-                                    <color key="textColor" red="0.0" green="0.0064952760874909801" blue="0.67282196969696972" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" red="0.089809822210641876" green="0.22503693222433135" blue="0.52658203125000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -2216,7 +2217,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Br" id="MqH-bJ-EOj">
                                     <font key="font" size="21" name="LucidaGrande-Bold"/>
-                                    <color key="textColor" red="0.0" green="0.0064952760869999996" blue="0.67282196969999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -2668,7 +2669,7 @@
                                 <rect key="frame" x="487" y="560" width="75" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Solid" id="wfd-sJ-YvS">
-                                    <font key="font" metaFont="systemBold" size="19"/>
+                                    <font key="font" size="19" name="LucidaGrande-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -2677,8 +2678,8 @@
                                 <rect key="frame" x="487" y="538" width="75" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Liquid" id="vsF-B8-zds">
-                                    <font key="font" metaFont="systemBold" size="19"/>
-                                    <color key="textColor" red="0.0" green="0.0064952760869999996" blue="0.67282196969999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <font key="font" size="19" name="LucidaGrande-Bold"/>
+                                    <color key="textColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -2686,7 +2687,7 @@
                                 <rect key="frame" x="487" y="517" width="75" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Gas" id="FfS-4F-lJu">
-                                    <font key="font" metaFont="systemBold" size="19"/>
+                                    <font key="font" size="19" name="LucidaGrande-Bold"/>
                                     <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -2805,7 +2806,7 @@
                                 </textFieldCell>
                             </textField>
                             <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lW9-X5-Nrg">
-                                <rect key="frame" x="114" y="453" width="184" height="24"/>
+                                <rect key="frame" x="135" y="453" width="184" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="upO-iL-0wW">
                                     <font key="font" size="13" name="LucidaGrande"/>
@@ -2829,14 +2830,6 @@ DQ
                                 <connections>
                                     <action selector="Balance:" target="XfG-lQ-9wD" id="kX5-Dn-rR0"/>
                                 </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="07N-g1-i2K">
-                                <rect key="frame" x="99" y="417" width="179" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Generate LaTeX Report" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r78-pQ-UNb">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name="LucidaGrande"/>
-                                </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xLE-mt-Ief">
                                 <rect key="frame" x="20" y="362" width="64" height="16"/>
@@ -2874,6 +2867,14 @@ DQ
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="07N-g1-i2K">
+                                <rect key="frame" x="120" y="417" width="179" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Generate LaTeX Report" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r78-pQ-UNb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name="LucidaGrande"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
